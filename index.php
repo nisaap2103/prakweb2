@@ -1,6 +1,8 @@
 <?php
 include_once 'header.php';
 include_once 'sidebar.php';
+include_once 'fungsi.php';
+include_once 'nilai_siswa.php';
 ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
