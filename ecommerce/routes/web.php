@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,11 @@ Route::get('/about', function () {
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/produk', [ProdukController::class, 'index']);
+});
+
+Route::prefix('front')->group(function () {
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/about/about', [AboutController::class, 'index']);
 });
 
 Route::get('/input', [InputController::class, 'index']); 
