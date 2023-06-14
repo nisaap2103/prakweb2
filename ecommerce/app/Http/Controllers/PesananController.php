@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\Pesanan;
 use Illuminate\Http\Request;
 
-class ProdukController extends Controller
+class PesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produk = new Produk(); 
-        return view('admin.produk.produk', ['produk' => $produk->getAllData()]);
+        $pesanan = new Pesanan(); 
+        return view('admin.pesanan.pesanan', ['pesanan' => $pesanan->getAllData()]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,12 +25,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //menampilkan seluruh data kategori produk
-        $kategori_produk = KategoriProduk::all();
-
-        //menampilkan seluruh data produk
-        $produk = Produk::all();
-        return view('admin.produk.create', compact('kategori_produk','produk'));
+        //
     }
 
     /**
@@ -41,21 +36,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //buat class dengan nama table yg mau kita tambahkan datanya (produk)
-        //ambil data yg diinput user dengan parameter request
-        //lalu masukkan kedalam kolom table (produk)
-        //lalu kembalikan ke tampilan produk ketika setelah user mengklik button simpan
-        $produk = new Produk();
-        $produk->kode = $request->kode; 
-        $produk->nama = $request->nama; 
-        $produk->harga_jual = $request->harga_jual; 
-        $produk->harga_beli = $request->harga_beli; 
-        $produk->stok = $request->stok; 
-        $produk->min_stok = $request->min_stok; 
-        $produk->deskripsi = $request->deskripsi; 
-        $produk->kategori_produk_id = $request->kategori_produk_id;
-        $produk->save();
-        return redirect('admin/produk'); 
+        //
     }
 
     /**
